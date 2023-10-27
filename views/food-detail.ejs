@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Search Details</title>
+</head>
+<body>
+    
+    <h1 class="food-title">
+        Food Type: <%= text %>
+    </h1>
+
+        <% for (let i=0; i<details.length; i++) { %>
+                <h2><%= details[i].food.label %></h2>
+                <p> Energy: <%= details[i].food.nutrients.ENERC_KCAL %></p>
+                <p> Protein: <%= details[i].food.nutrients.PROCNT %></p>
+                <p> Fat: <%= details[i].food.nutrients.FAT %></p>
+                <p> Carbs: <%= details[i].food.nutrients.CHOCDF %></p>
+                <p> Fiber: <%= details[i].food.nutrients.FIBTG %></p>
+                <img src="<%= details[i].food.image %>" alt="">
+        <% } %>
+
+
+</body>
+</html>
