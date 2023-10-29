@@ -23,8 +23,6 @@ app.post("/food-detail", async (req, res) => {
         const response = await axios.get(baseURL + `/api/food-database/v2/parser?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${req.body.query}`)
         const result = response.data
 
-        console.log(result)
-
         res.render("food-detail.ejs", {
             text: result.text,
             details: result.hints

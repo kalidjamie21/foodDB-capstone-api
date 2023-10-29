@@ -28,3 +28,9 @@
 .search-btn:hover {
     background-color: rgb(149, 93, 3);
 }
+
+.main-contain {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

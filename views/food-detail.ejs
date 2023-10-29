@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Search Details</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css"> 
+
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
     
@@ -12,16 +17,23 @@
         Food Type: <%= text %>
     </h1>
 
-        <% for (let i=0; i<details.length; i++) { %>
-                <h2><%= details[i].food.label %></h2>
-                <p> Energy: <%= details[i].food.nutrients.ENERC_KCAL %></p>
-                <p> Protein: <%= details[i].food.nutrients.PROCNT %></p>
-                <p> Fat: <%= details[i].food.nutrients.FAT %></p>
-                <p> Carbs: <%= details[i].food.nutrients.CHOCDF %></p>
-                <p> Fiber: <%= details[i].food.nutrients.FIBTG %></p>
+    <div class="main-contain container">
+        <% for (let i=0; i<details.length; i++) { %>    
+            <div class="card" style="width: 18rem;">
                 <img src="<%= details[i].food.image %>" alt="">
+                <div class="card-body">
+                    <h5 class="card-title"><%= details[i].food.label %></h5>
+                    
+                    <p class="card-text"> Energy: <%= details[i].food.nutrients.ENERC_KCAL %></p>
+                    <p class="card-text"> Protein: <%= details[i].food.nutrients.PROCNT %></p>
+                    <p class="card-text"> Fat: <%= details[i].food.nutrients.FAT %></p>
+                    <p class="card-text"> Carbs: <%= details[i].food.nutrients.CHOCDF %></p>
+                    <p class="card-text"> Fiber: <%= details[i].food.nutrients.FIBTG %></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
         <% } %>
-
+    </div>
 
 </body>
 </html>
